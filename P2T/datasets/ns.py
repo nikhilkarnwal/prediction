@@ -52,7 +52,8 @@ class NS(Dataset):
 
         # Nuscenes dataset and predict helper
         self.dataroot = dataroot
-        self.ns = NuScenes('v1.0-trainval', dataroot=dataroot)
+        # self.ns = NuScenes('v1.0-trainval', dataroot=dataroot)
+        self.ns = NuScenes('v1.0-mini', dataroot=dataroot)
         self.helper = PredictHelper(self.ns)
         self.token_list = get_prediction_challenge_split(split, dataroot=dataroot)
 
@@ -145,7 +146,7 @@ class NS(Dataset):
             img_dir = os.path.join(self.dataroot, 'prediction_raster_maps',
                                    'images' + str(self.img_size) + "_" + str(int(grid_size_m)) + 'm')
             if not os.path.isdir(img_dir):
-                os.mkdir(img_dir)
+                os.makedirs(img_dir)
 
             # Generate and save raster map image with just static elements
             img = self.map_ip.make_representation(instance_token, sample_token)

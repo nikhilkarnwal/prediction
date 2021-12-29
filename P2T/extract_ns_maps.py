@@ -36,6 +36,8 @@ tr_dl = DataLoader(tr_set, batch_size=batch_size, shuffle=False, num_workers=8)
 val_dl = DataLoader(val_set, batch_size=batch_size, shuffle=False, num_workers=8)
 ts_dl = DataLoader(ts_set, batch_size=batch_size, shuffle=False, num_workers=8)
 
+print(f"tokens - {len(tr_dl)}")
+
 print('Extracting train set images....')
 for k, data in enumerate(tr_dl):
     print('Batch ' + str(k) + ' of ' + str(len(tr_set) // batch_size + 1))

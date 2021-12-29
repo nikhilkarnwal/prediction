@@ -1,7 +1,7 @@
 import torch
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
-from sklearn.utils.testing import ignore_warnings
+# from sklearn.utils.testing import ignore_warnings
 from sklearn.exceptions import ConvergenceWarning
 import numpy as np
 
@@ -32,7 +32,7 @@ def get_plan_feats(plans, scene_tensor, agent_tensor):
     return scene_feats, agent_feats
 
 
-@ignore_warnings(category=ConvergenceWarning)
+# @ignore_warnings(category=ConvergenceWarning)
 def km_cluster(data, num_clusters):
     """
     Performs K-means clustering on a set of sampled trajectories

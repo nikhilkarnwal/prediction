@@ -30,10 +30,10 @@ args_mdp:
 
 # Dataset and dataloader parameters
 ds: 'ns'
-dataroot: 'data/ns'   # Add NuScenes data root here
-train: "train"
-val: "train_val"
-test: "val"
+dataroot: '../../data/sets/nuscenes'   # Add NuScenes data root here
+train: "mini_train" #"train"
+val: "mini_val" #"train_val"
+test: "mini_val" #"val"
 img_size: 200
 t_h: 2
 t_f: 6
